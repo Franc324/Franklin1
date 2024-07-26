@@ -1,0 +1,378 @@
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+/* Declaration de variable */
+html {
+  --var-bg-color: #7443e9;
+  --var-second-color: #6e51cf;
+  --var-text-color: #fff;
+  --var-bg-light: #f0f4ff;
+  --var-text-color-dark: #333;
+  --var-bg-dark: #d3c9f3;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  background: var(--var-bg-light);
+  color: var(--var-text-color-dark);
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+header {
+  width: 100%;
+  height: 4rem;
+  background: white;
+  padding: 0 2rem;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+header nav ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 2rem;
+}
+header nav ul li a {
+  text-decoration: none;
+  color: var(--var-text-color-dark);
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+nav ul li a:hover {
+  color: var(--var-second-color);
+}
+header button {
+  background: var(--var-second-color);
+  color: var(--var-text-color);
+  border: none;
+  padding: 0.7rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.4s;
+}
+header button:hover {
+  background: var(--var-text-color);
+  color: var(--var-text-color-dark);
+  border: 1px solid var(--var-second-color);
+}
+/*   mise en forme de la selection main   */
+
+main {
+  padding: 2rem;
+}
+#hero {
+  width: 100%;
+  height: 70vh;
+  border-radius: 5px;
+  padding: 1rem;
+  background: linear-gradient(
+      90deg,
+      var(--var-bg-color) 15%,
+      var(--var-second-color)
+    )
+    100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#hero .gauche h1 {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--var-text-color);
+  margin-bottom: 0.6rem;
+}
+#hero .gauche p {
+  font-size: clamp(1rem, 2vw, 1rem);
+  color: var(--var-text-color);
+  margin-bottom: 0.6rem;
+  line-height: 1;
+}
+#hero button {
+  background: var(--var-text-color);
+  color: var(--var-text-color-dark);
+  border: none;
+  padding: 0.9rem 1rem;
+  border-radius: 0.3rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+.droite {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.droite img {
+  z-index: 40;
+}
+
+.effets {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.effets .cercle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  animation: animation 8s ease-in infinite;
+}
+
+.cercle:nth-child(1) {
+  background: linear-gradient(90deg, var(--var-bg-color) 15%, #9b8dc8 100%);
+  position: absolute;
+  right: 30px;
+  animation-delay: 2s;
+}
+.cercle:nth-child(2) {
+  background: linear-gradient(90deg, var(--var-bg-color) 15%, #9b8dc8 100%);
+  position: absolute;
+  left: 40px;
+  animation-delay: 6s;
+}
+.cercle:nth-child(3) {
+  background: linear-gradient(90deg, var(--var-bg-color) 15%, #9b8dc8 100%);
+  position: absolute;
+  left: 180px;
+  top: 20px;
+  animation-delay: 4s;
+}
+@keyframes animation {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(100px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* mise en forme de la section Services */
+
+#services {
+  margin-top: 2rem;
+}
+.h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--var-text-color-dark);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.services-list {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+.card-service {
+  flex: 1;
+  background: white;
+  padding: 1rem;
+  border-radius: 5px;
+  position: relative;
+}
+.card-service .icon {
+  width: 40px;
+  height: 40px;
+  background: #ccb6fa;
+  border-radius: 5px;
+  position: absolute;
+  top: -25px;
+}
+.card-service .icon i {
+  font-size: 1rem;
+  color: var(--var-text-color);
+}
+/* Mise en former de la section album */
+
+#album {
+  margin-top: 2rem;
+}
+#album h2.mtop {
+  margin-top: 2rem;
+}
+#album .photos {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  width: 100%;
+}
+
+/*    mise en forme de la section contact */
+
+#contact {
+  margin-top: 3rem;
+  display: flex;
+  height: calc(100vh - 230px);
+  background: white;
+}
+
+#contact .partie1,
+.partie2 {
+  flex: 1;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  position: relative;
+  padding: 1rem;
+  height: 100%;
+}
+.partie1 {
+  background: #ccb6fa;
+  flex-direction: column;
+}
+.partie2 form {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+.partie2 input,
+textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid #ccb6fa;
+  margin-bottom: 1rem;
+  outline: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: 0.5s;
+}
+.partie2 form input:focus,
+textarea:focus {
+  border: 1px solid var(--var-bg-color);
+}
+.partie2 form textarea {
+  height: 150px;
+}
+
+.partie2 form button {
+  background: var(--var-bg-color);
+  color: var(--var-text-color);
+  padding: 0.8rem 1rem;
+  border-radius: 0.3rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.partie2 form button:hover {
+  background: var(--var-second-color);
+}
+
+/*  mise en forme de footer */
+
+footer {
+  width: 100%;
+  height: 100px;
+  background: var(--var-text-color);
+  margin-top: 2rem;
+}
+
+/* mise en forme des Reseau */
+
+.reseaux {
+  position: fixed;
+  bottom: 2rem;
+  right: 0;
+  background: #ccb6fa;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.reseaux .carte {
+  width: 30px;
+  height: 30px;
+  padding: 1rem;
+  transition: 0.3s;
+}
+.carte:hover {
+  background: white;
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 768px) {
+  header nav {
+    display: none;
+  }
+  #hero {
+    flex-direction: column;
+    height: auto;
+    gap: 1rem;
+    overflow: hidden;
+  }
+
+  #hero .gauche h1 {
+    font-size: 2.3rem;
+    font-weight: 500;
+  }
+  #hero button {
+    margin-top: 2rem;
+  }
+  .effets .cercle {
+    width: 50px;
+    height: 50px;
+  }
+
+  .services-list {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  #album .photos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  #contact {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  #contact .partie1 {
+    height: auto;
+  }
+  #contact .partie2 form {
+    height: auto;
+  }
+  .reseaux {
+    bottom: 0;
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  #contact .partie1 {
+    height: auto;
+    overflow: hidden;
+  }
+}
